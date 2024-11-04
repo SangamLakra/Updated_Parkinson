@@ -26,10 +26,9 @@ with st.sidebar:
 
 # Diabetes Prediction Page
 if selected == 'Diabetes Prediction':
-    # Page title and layout
     st.title('Diabetes Prediction using ML')
     col1, col2, col3 = st.columns(3)
-    
+
     # Input fields
     with col1:
         Pregnancies = st.text_input('Number of Pregnancies')
@@ -48,7 +47,6 @@ if selected == 'Diabetes Prediction':
     with col2:
         Age = st.text_input('Age of the Person')
 
-    # Prediction button
     diab_diagnosis = ''
     if st.button('Diabetes Test Result'):
         user_input = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]
@@ -60,24 +58,30 @@ if selected == 'Diabetes Prediction':
         else:
             diab_diagnosis = 'The person is not diabetic'
             
-    # Display result
     st.success(diab_diagnosis)
 
     # Suggestions and Remedies
     with st.expander("Suggestions and Remedies"):
         if diab_diagnosis == 'The person is diabetic':
-            st.write("### Lifestyle Tips for Diabetes")
-            st.write("- **Maintain a balanced diet**: Focus on whole grains, lean proteins, and fiber.")
-            st.write("- **Exercise regularly**: Aim for at least 30 minutes of activity most days.")
-            st.write("- **Monitor blood sugar levels**: Regular checkups can help manage levels.")
-            st.write("- **Stay hydrated** and avoid sugary drinks.")
+            st.write("### Lifestyle Changes")
+            st.write("- **Increase physical activity**: Aim for at least 150 minutes per week.")
+            st.write("- **Quit smoking**: Smoking can worsen complications.")
+            
+            st.write("### Dietary Recommendations")
+            st.write("- **Balanced meals**: Include vegetables, lean proteins, and healthy fats.")
+            st.write("- **Monitor carbohydrate intake**: Focus on whole grains over refined carbs.")
+            st.write("- **Stay hydrated**: Drink water regularly and avoid sugary drinks.")
+
+            st.write("### Medical Advice")
+            st.write("- **Regular monitoring**: Check blood sugar levels frequently.")
+            st.write("- **Consult a healthcare provider**: Regular checkups are essential.")
+
         else:
             st.write("### General Health Tips")
-            st.write("Keep up with regular checkups and maintain a healthy lifestyle to prevent diabetes.")
+            st.write("Continue leading a healthy lifestyle with a balanced diet and regular exercise to prevent diabetes.")
 
 # Heart Disease Prediction Page
 if selected == 'Heart Disease Prediction':
-    # Page title and layout
     st.title('Heart Disease Prediction using ML')
     col1, col2, col3 = st.columns(3)
 
@@ -109,7 +113,6 @@ if selected == 'Heart Disease Prediction':
     with col1:
         thal = st.text_input('thal: 0 = normal; 1 = fixed defect; 2 = reversable defect')
 
-    # Prediction button
     heart_diagnosis = ''
     if st.button('Heart Disease Test Result'):
         user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
@@ -121,24 +124,29 @@ if selected == 'Heart Disease Prediction':
         else:
             heart_diagnosis = 'The person does not have any heart disease'
             
-    # Display result
     st.success(heart_diagnosis)
 
     # Suggestions and Remedies
     with st.expander("Suggestions and Remedies"):
         if heart_diagnosis == 'The person is having heart disease':
-            st.write("### Lifestyle Tips for Heart Health")
-            st.write("- **Quit smoking** and avoid secondhand smoke.")
-            st.write("- **Eat a heart-healthy diet**: Focus on fruits, vegetables, and low-fat dairy.")
-            st.write("- **Stay active**: Engage in moderate exercise most days of the week.")
-            st.write("- **Limit alcohol intake** and avoid excessive caffeine.")
+            st.write("### Lifestyle Changes")
+            st.write("- **Engage in physical activity**: Aim for at least 30 minutes a day.")
+            st.write("- **Quit smoking** and limit alcohol intake.")
+            
+            st.write("### Dietary Recommendations")
+            st.write("- **Heart-healthy diet**: Eat more fruits, vegetables, and whole grains.")
+            st.write("- **Limit sodium**: High sodium intake can increase blood pressure.")
+            
+            st.write("### Medical Advice")
+            st.write("- **Regular checkups**: Visit a cardiologist as advised.")
+            st.write("- **Medication adherence**: Follow prescribed treatments.")
+
         else:
             st.write("### General Heart Health Tips")
-            st.write("Continue leading a healthy lifestyle and check your heart health regularly.")
+            st.write("Maintain a healthy lifestyle, including a balanced diet and regular exercise.")
 
 # Parkinson's Prediction Page
 if selected == "Parkinsons Prediction":
-    # Page title and layout
     st.title("Parkinson's Disease Prediction using ML")
     col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -147,7 +155,6 @@ if selected == "Parkinsons Prediction":
         fo = st.text_input('MDVP:Fo(Hz)')
     # Add other input fields similarly...
 
-    # Prediction button
     parkinsons_diagnosis = ''
     if st.button("Parkinson's Test Result"):
         user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs, RAP, PPQ, DDP, Shimmer, Shimmer_dB, APQ3, APQ5, APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
@@ -159,17 +166,23 @@ if selected == "Parkinsons Prediction":
         else:
             parkinsons_diagnosis = "The person does not have Parkinson's disease"
             
-    # Display result
     st.success(parkinsons_diagnosis)
 
     # Suggestions and Remedies
     with st.expander("Suggestions and Remedies"):
         if parkinsons_diagnosis == "The person has Parkinson's disease":
-            st.write("### Tips for Managing Parkinson's")
-            st.write("- **Stay active** with exercises tailored to your condition.")
-            st.write("- **Eat a balanced diet** rich in fiber to manage symptoms.")
-            st.write("- **Join a support group** for emotional and social support.")
+            st.write("### Lifestyle Adjustments")
+            st.write("- **Stay active** with exercises tailored to your condition, like yoga or tai chi.")
+            st.write("- **Practice relaxation techniques** to reduce stress.")
+
+            st.write("### Dietary Recommendations")
+            st.write("- **Balanced diet**: Ensure meals rich in fiber and antioxidants.")
+            st.write("- **Hydration**: Drink plenty of water to prevent dehydration.")
+            
+            st.write("### Medical Advice")
+            st.write("- **Physical therapy**: Consider regular sessions for mobility and flexibility.")
+            st.write("- **Medication management**: Work with healthcare providers on suitable treatments.")
+
         else:
             st.write("### General Health Tips")
-            st.write("Stay active and maintain a healthy diet to support overall neurological health.")
-
+            st.write("Maintain a healthy lifestyle to support overall neurological health.")
