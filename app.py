@@ -6,6 +6,19 @@ from streamlit_option_menu import option_menu
 # Set page configuration
 st.set_page_config(page_title="Health Assistant", layout="wide", page_icon="🧑‍⚕️")
 
+# Apply custom CSS for background image
+page_bg_img = '''
+<style>
+.stApp {
+    background-image: url("https://wallpapercave.com/wp/wp1848595.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 # Get the current working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,7 +28,7 @@ parkinsons_model = pickle.load(open(os.path.join(working_dir, 'parkinsons_model.
 # Sidebar for navigation
 with st.sidebar:
     selected = option_menu(
-        'Parkinson Disease Detection System',
+        'Parkinson Disease Prediction System',
         ['Parkinsons Prediction'],  # Only Parkinson's Prediction option
         menu_icon='hospital-fill',
         icons=['person'],
