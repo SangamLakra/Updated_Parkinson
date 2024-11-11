@@ -15,7 +15,7 @@ parkinsons_model = pickle.load(open(os.path.join(working_dir, 'parkinsons_model.
 # Sidebar for navigation
 with st.sidebar:
     selected = option_menu(
-        'Multiple Disease Prediction System',
+        'Prediction Disease Detection System',
         ['Parkinsons Prediction'],  # Only Parkinson's Prediction option
         menu_icon='hospital-fill',
         icons=['person'],
