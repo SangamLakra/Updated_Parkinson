@@ -10,7 +10,7 @@ st.set_page_config(page_title="Health Assistant", layout="wide", page_icon="🧑
 page_bg_img = '''
 <style>
 .stApp {
-    background-image: url("https://wallpapercave.com/wp/wp1848595.jpg");
+    background-image: url("https://coolbackgrounds.io/images/backgrounds/white/white-trianglify-b79c7e1f.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
